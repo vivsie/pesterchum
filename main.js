@@ -73,28 +73,32 @@ client.on('message', msg => {
 				name: "q",
 				help: "Typing quirks done with regex. \n	Usage: ```"+prefix+"q [character name] [message]```",
 				func: function(){
-					var out = arg.replace(" ","");
 					var args = arg.split(" ");
-					console.log(args)
+					console.log(args);
 					if(data.quirks.hasOwnProperty(args[1].toLowerCase())){ 
 						
+						var out = arg.replace(" "+args[1],"");
 						var quirk = data.quirks[args[1].toLowerCase()];
-						console.log(JSON.stringify(quirk,null,"	"));
 						
 						for(var i in quirk){
-							out = out.replace(new RegExp(quirk[i].str, "g"), quirk[i].rep); //Something might be fucking up here lmfao
-							console.log("out: "+out)
-						}
-						
-						switch(quirk[0]){
 							
-							case "lower":
-								out = out.toLowerCase();
-								break;
+							//If this particular element is a string, it's one of the special functions defined here.
+							if(typeof quirk[i] === 'string'){
 								
-							case "upper":
-								out = out.toUpperCase();
-								break;
+								switch(quirk[i]){
+									case "upper":
+										out = out.toUpperCase();
+										break;
+									case "lower":
+										out = out.toLowerCase();
+										break;
+								}
+								//If it's not a string, it's regex.
+							}else{
+						
+								out = out.replace(new RegExp(quirk[i].str, "g"), quirk[i].rep);
+								console.log("out: "+out)								
+							}
 						}
 						
 						if(msg.author.id == "160513341457039360" && args[1].toLowerCase() == "karkat"){
