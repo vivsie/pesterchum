@@ -76,13 +76,13 @@ client.on('message', msg => {
 					var out = arg.replace(" ","");
 					var args = arg.split(" ");
 					console.log(args)
-					if(data.quirks.hasOwnProperty(args[1].toLowerCase())){ //THIS IS WHERE IT SCREWS UP. PROBABLY THE ARGS LIST
+					if(data.quirks.hasOwnProperty(args[1].toLowerCase())){ 
 						
 						var quirk = data.quirks[args[1].toLowerCase()];
 						console.log(JSON.stringify(quirk,null,"	"));
 						
 						for(var i in quirk){
-							out = out.replace(new RegExp(quirk[i].str, "g"), quirk[i].rep);
+							out = out.replace(new RegExp(quirk[i].str, "g"), quirk[i].rep); //Something might be fucking up here lmfao
 							console.log("out: "+out)
 						}
 						
