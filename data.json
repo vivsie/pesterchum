@@ -1,0 +1,163 @@
+{
+	"flirts": {
+		"safe": [
+			"OwO what's this?~",
+			"if this were tinder i'd swipe right on you all day",
+			"are you an aussie? because you're all i see.",
+			"you smell like trash. mind if i take you out?",
+			"I forgot my phone number, can i have yours?",
+			"hey theres something wrong with my phone. your number isnt in it.",
+			"you're hotter than the bottom of my laptop.",
+			"on a scale of one to america, how free are you tonight?",
+			"are you from tennessee? because you're the only ten i see.",
+			"you can't spell cute without u.",
+			"Are you a knife, cause you're looking pretty sharp.",
+			"are you a skipping stone? cause you're smooth af",
+			"your name must be wifi, cause i'm feelin a connection"
+		],
+		"nsfw": [
+			"are you a skeleton cause i wanna get in ur bone zone",
+			"my favorite planet is uranus, id love to see it some day.",
+			"do you have a mirror in your pants? because i can see myself in them",
+			"*OHHH YESSS~*",
+			"you're hotter than satans balls and twice as curvy.",
+			"aww!~ *nuzzles back and notices ur bulge* OwO",
+			"hey baby lets frick frack",
+			"ey bb u want sum fuk ;)",
+			"FUCK ME SCALENE TRIANGLE",
+			"hey, wanna go to the spare room? \ni have fuzzy handcuffs.",
+			"are you a skeleton because i wanna suck your ectoplasm",
+			"*slips on troll horns* \nwanna get horny with me?",
+			"Im not a vampire but i can still suck",
+			"lets make like camels and hump",
+			"I learned this from the pizza man",
+			"do you play mmos? cause i wanna grind with you",
+			"is that a keg in your pants because i wanna tap that ass",
+			"nice shirt. i'd love to see it on my floor"
+		]
+	},
+	"roasts": {
+		"85561594766974976": "0",
+		"240576420827496448": 1
+	},
+	"quirks": {
+		"karkat": [
+			"upper",
+			{
+				"str": " ",
+				"rep": " "
+			}
+		],
+		"aradia": [
+			"lower",
+			{
+				"str": "o",
+				"rep": "0"
+			}
+		],
+		"sonata": [
+			"",
+			{
+				"str": "(.)\\1",
+				"rep": "$1-$1"
+			}
+		],
+		"fresha": [
+			"lower",
+			{
+				"str": "[iI]",
+				"rep": "!"
+			},
+			{
+				"str": "[aA]",
+				"rep": "@"
+			}
+		],
+		"alyxin": [
+			"",
+			{
+				"str": "[vV]",
+				"rep": "\\\\/"
+			},
+			{
+				"str": "[aA]",
+				"rep": "/\\\\"
+			},
+			{
+				"str": "[wW]",
+				"rep": "\\\\/\\\\/"
+			},
+			{
+				"str": "[mM]",
+				"rep": "/\\\\/\\\\"
+			},
+			{
+				"str":"i",
+				"rep":"I"
+			}
+		],
+		"feferi": [
+			"",
+			{
+				"str": "[hH]",
+				"rep": ")-("
+			},
+			{
+				"str": "[eE]",
+				"rep": "--E"
+			},
+			{
+				"str": "fuck([iyIY])",
+				"rep": "glubb$1"
+			},
+			{
+				"str": "fuck",
+				"rep": "glub"
+			}
+		],
+		"terezi": [
+			"upper",
+			{
+				"str": "[aA]",
+				"rep": "4"
+			},
+			{
+				"str": "[iI]",
+				"rep": "1"
+			},
+			{
+				"str": "[eE]",
+				"rep": "3"
+			}
+		],
+		"eridan": [
+			"",
+			{
+				"str":"V",
+				"rep":"VV"
+			},
+			{
+				"str":"v",
+				"rep":"vv"
+			},
+			{
+				"str":"W",
+				"rep":"WW"
+			},
+			{
+				"str":"w",
+				"rep":"ww"
+			},
+			{
+				"str":"ing",
+				"rep":"in"
+			}
+		]
+	},
+	"tags": {
+		"85561594766974976": [
+			"rabbit"
+		]
+	},
+	"vent_channels":["239082879135645696","284218812654682112","247631842977513472","247958194540904449"]
+}
