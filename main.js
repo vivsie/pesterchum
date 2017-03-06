@@ -32,7 +32,12 @@ try{
 			var arg = "";
 			
 			function print(content){
-				msg.channel.sendMessage(content).catch(console.error);
+				if(content.length < 2000){
+					msg.channel.sendMessage(content).catch(console.error);
+				}
+				else{
+					log("[PESTERCHUM] Message at "+msg.channel.guild.name +" ("+ msg.channel.name+") too long.");
+				}
 			}
 
 			function log(t){
@@ -130,6 +135,17 @@ try{
 							print(data.flirts.safe[Math.floor(Math.random() * data.flirts.safe.length)]);
 						}
 					}
+				},
+				eval: {
+					name: "eval",
+					help: "Debug command. Evaluates a statement if you have permission.",
+					func: function(){
+						if(msg.author.id == "85561594766974976"){		
+								eval(msg.content.replace('!eval ',''));
+						}else{
+							print("ur not viv sorry :c");
+						}
+					}
 				}
 			}
 			
@@ -150,11 +166,7 @@ try{
 			
 			//Eval for debug, not very safe lmao
 			if(msg.content.startsWith("!eval")){
-				if(msg.author.id == "85561594766974976"){
-					eval(msg.content.replace("!eval ",""));
-				}else{
-					print("ur not viv sorry :c");
-				}
+
 			}
 			
 			//Move bot messages from vent channels to general
