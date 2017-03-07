@@ -75,7 +75,6 @@ try{
 					name: "q",
 					help: "Typing quirks done with regex. \n	Usage: ```"+prefix+"q [character name] [message]```",
 					func: function(){
-						var args = arg.split(" ");
 						if(data.quirks.hasOwnProperty(args[1].toLowerCase())){ 
 							
 							var out = arg.replace(" "+args[1],"");
@@ -149,10 +148,13 @@ try{
 				for(var i in commands){
 						
 					var command = commands[i];
-				
+							
 					if(msg.content.startsWith(prefix + command.name)){
-						arg = msg.content.replace(prefix+i,"");
 						log("[PESTERCHUM] " + msg.author.username + " sent command " + command.name + "("+arg+") at " + msg.channel.name);
+						
+						arg = msg.content.replace(prefix+i,"");
+						args = arg.split(" ");
+						
 						command.func();
 						break;
 					}
