@@ -158,19 +158,12 @@ try{
 					}
 				}
 			}
-			
-			//Move bot messages from vent channels to general
-			for(var i in data.vent_channels){
-				if(msg.channel.id == data.vent_channels[i] && msg.author.bot){
-					msg.delete();
-					msg.channel.guild.channels.find("name","general").sendMessage(msg.content);
-				}
-			}
 	});
-			//Move deleted messages to deleted message channel. Big sister's watching
+			//Move deleted messages to deleted message channel. Kinda wanna get rid of this bc it's really annoying & invasive
 	client.on("messageDelete",msg =>{
-		
-		client.guilds.get("160514075267170304").channels.find("name", "dne").sendMessage(msg.author.username + ": " + msg);
+		if(msg.channel.name != "dne"){
+			client.guilds.get("160514075267170304").channels.find("name", "dne").sendMessage(msg.author.username + ": " + msg);
+		}
 	});
 
 }catch(e){
