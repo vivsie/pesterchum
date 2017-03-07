@@ -19,8 +19,6 @@ client.login(login.secret);
 
 client.on('ready', () => {
   console.log('[PESTERCHUM] BOT READY');
-  discordChat = client.channels.find('id','160514075267170304');
-  console.log("[PESTERCHUM] Main Discord channel set to '"+discordChat.name+"'.");
 });
 
 //putting a try/catch here so errors won't screw stuff up
