@@ -1,5 +1,7 @@
 const fs = require("fs");
 const Discord = require('discord.js');
+const request = require("request");
+const github = require("github.js")
 var data = JSON.parse(fs.readFileSync("data.json"));
 const login = JSON.parse(fs.readFileSync("login.json"));
 const client = new Discord.Client();
@@ -32,12 +34,7 @@ try{
 			var arg = "";
 			
 			function print(content){
-				if(content.length < 2000){
-					msg.channel.sendMessage(content).catch(console.error);
-				}
-				else{
-					log("[PESTERCHUM] Message at "+msg.channel.guild.name +" ("+ msg.channel.name+") too long.");
-				}
+				msg.channel.sendMessage(content).catch(console.error);
 			}
 
 			function log(t){
@@ -162,11 +159,6 @@ try{
 						break;
 					}
 				}
-			}
-			
-			//Eval for debug, not very safe lmao
-			if(msg.content.startsWith("!eval")){
-
 			}
 			
 			//Move bot messages from vent channels to general
