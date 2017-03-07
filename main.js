@@ -1,6 +1,5 @@
 const fs = require("fs");
 const Discord = require('discord.js');
-const github = require("github.js")
 var data = JSON.parse(fs.readFileSync("data.json"));
 const login = JSON.parse(fs.readFileSync("login.json"));
 const client = new Discord.Client();
