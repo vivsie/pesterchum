@@ -158,12 +158,6 @@ try{
 				}
 			}
 		}
-		// I really hope this ends up being temporary because this is an awful way to do it
-		if(msg.author.username == "GitHub" && msg.author.bot){
-			print("update detected");
-		}
-		
-		
 	});
 
 }catch(e){
