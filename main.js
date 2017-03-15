@@ -147,11 +147,11 @@ try{
 					
 				var command = commands[i];
 						
-				if(msg.content.startsWith(prefix + command.name)){
-					log("[PESTERCHUM] " + msg.author.username + " sent command " + command.name + "("+arg+") at " + msg.channel.name);
-					
+				if(msg.content.startsWith(prefix + command.name)){					
 					arg = msg.content.replace(prefix+i,"");
 					args = arg.split(" ");
+					
+					log("[PESTERCHUM] " + msg.author.username + " sent command " + command.name + "("+arg+") at " + msg.channel.name);
 					
 					command.func();
 					break;
