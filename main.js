@@ -42,6 +42,13 @@ try{
 		var args = [];
 		
 		var commands = {
+			emojify: {
+				name: "emojify",
+				help: "Takes a message and turns the letters and most of the characters into emoji.\n	Usage:```"+prefix+"emojify [string]```",
+				func: function(){
+					print(arg.replace(/[a-zA-Z]/g, ":regional_indicator_$&: "));
+				}
+			},
 			ping: {
 				name: "ping",
 				help:  "Says \"Pong!\"\n	Usage: ```"+prefix+"ping```",
