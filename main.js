@@ -46,7 +46,10 @@ try{
 				name: "emojify",
 				help: "Takes a message and turns the letters and most of the characters into emoji.\n	Usage:```"+prefix+"emojify [string]```",
 				func: function(){
-					print(arg.replace(/[a-zA-Z]/g, ":regional_indicator_$&: "));
+					var nums = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+					print(arg.replace(/[a-zA-Z]/g, ":regional_indicator_$&: ").replace(/[0-9]/g,function(x){
+						return ":"+nums[x]+":";
+					}));
 				}
 			},
 			ping: {
@@ -123,7 +126,7 @@ try{
 				"	usage: ```"+prefix+"flirt [nsfw]```",
 				func: function(){
 					if(arg.includes("nsfw")){
-						if(msg.channel.id == "239084094216994817"){
+						if(msg.channel.name.startsWith("nsfw")){
 							print(data.flirts.nsfw[Math.floor(Math.random() * data.flirts.nsfw.length)]);
 						}
 						else{
