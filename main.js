@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Discord = require('discord.js');
+const request = require("request");
 var data = JSON.parse(fs.readFileSync("data.json"));
 const login = JSON.parse(fs.readFileSync("login.json"));
 const client = new Discord.Client();
@@ -135,6 +136,50 @@ try{
 					}
 					else{	
 						print(data.flirts.safe[Math.floor(Math.random() * data.flirts.safe.length)]);
+					}
+				}
+			},
+			e621: {
+				name: "e621",
+				help: "searches e621 for images. Must be in a nsfw channel",
+				func: function(){
+					if(msg.channel.name.startsWith("nsfw")){
+						//TODO: actually write this shit
+						 var options = {
+							url: 'https://e621.net/post/',
+							headers: {
+								'User-Agent': 'vivacity.bright@gmail.com'
+							}
+						};
+						if(!arg){
+							options.url += "popular_by_day.json";
+						}
+						else{
+							arg = arg.replace(" ",""); //get rid of that pesky first space
+							args = arg.split(" ");
+							var tag = args.join("%20");
+							options.url += "index.json?tags="+tag;
+						}
+						request(options, function(err, response, body){
+							if(!err){
+								if(response.statusCode == 200){
+									var b = JSON.parse(body);
+									if(b.length > 0){
+										var randompost = b[Math.floor(Math.random() * (b.length))];
+										print(randompost.sample_url+"\nsource: <https://e621.net/post/show/"+randompost.id+">");	
+									}
+									else{
+										print("your search ("+args+") had no results! try using a different set of tags.");
+									}
+								}
+								else{
+									console.log("HTTP response not ok: "+response.statusCode);
+								}
+							}
+							else{
+								console.log("Error processing HTTP request: "+err);
+							}
+						});
 					}
 				}
 			},
