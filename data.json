@@ -51,6 +51,7 @@
 		]
 	},
 	"e621_blacklist":"",
+	"prefix":"d!",
 	"quirks": {
 		"karkat": [
 			"upper",

@@ -4,7 +4,7 @@ const request = require("request");
 var data = JSON.parse(fs.readFileSync("data.json"));
 const login = JSON.parse(fs.readFileSync("login.json"));
 const client = new Discord.Client();
-var prefix = "!"
+var prefix = data.prefix;
 var discordChat;
 
 
@@ -16,7 +16,12 @@ function update(location, dat){
 	fs.writeFile("data.json",JSON.stringify(data,null,"\t"));
 }
 
-client.login(login.secret);
+client.login(login.secret).then( ()=>{
+	console.log("Successfully logged in!");
+}, (reason) => {
+	console.log("Failed to log in.\n"+reason);
+	process.exit(0);
+});
 
 client.on('ready', () => {
   console.log('[PESTERCHUM] BOT READY');
@@ -141,7 +146,7 @@ try{
 			},
 			e621: {
 				name: "e621",
-				help: "searches e621 for images. Must be in a nsfw channel",
+				help: "searches e621 for images. Must be in a nsfw channel.\n	Usage:```"+prefix+"e621 [tags]```",
 				func: function(){
 					if(msg.channel.name.startsWith("nsfw")){
 						//TODO: actually write this shit
@@ -167,6 +172,7 @@ try{
 									if(b.length > 0){
 										var randpostindex = Math.floor(Math.random() * (b.length))
 										var randompost = b[randpostindex];
+										console.log(randpostindex,b.length);
 										print(randompost.sample_url+"\nsource: <https://e621.net/post/show/"+randompost.id+">");	
 									}
 									else{
