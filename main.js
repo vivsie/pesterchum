@@ -165,7 +165,8 @@ try{
 								if(response.statusCode == 200){
 									var b = JSON.parse(body);
 									if(b.length > 0){
-										var randompost = b[Math.floor(Math.random() * (b.length))];
+										var randpostindex = Math.floor(Math.random() * (b.length))
+										var randompost = b[randpostindex];
 										print(randompost.sample_url+"\nsource: <https://e621.net/post/show/"+randompost.id+">");	
 									}
 									else{
