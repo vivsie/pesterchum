@@ -1,6 +1,7 @@
 const fs = require("fs");
 const Discord = require('discord.js');
 const request = require("request");
+const ROT13 = require("rot-thirteen");
 var data = JSON.parse(fs.readFileSync("data.json"));
 const login = JSON.parse(fs.readFileSync("login.json"));
 const client = new Discord.Client();
@@ -56,6 +57,16 @@ try{
 					print(arg.replace(/[a-zA-Z]/g, ":regional_indicator_$&: ").replace(/[0-9]/g,function(x){
 						return ":"+nums[x]+":";
 					}));
+				}
+			},
+			rot13:{
+				name: "rot13",
+				help: "ciphers your message using rot 13. useful for spoilers & such \n	Usage: ```"+prefix+"rot13 [text]```",
+				func: function(){
+					if(msg.channel == "text"){
+						msg.delete();
+					}
+					print(ROT13(arg));
 				}
 			},
 			ping: {

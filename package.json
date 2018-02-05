@@ -3,7 +3,8 @@
   "version": "0.2.3",
   "dependencies": {
     "discord.js": "^9.3.1",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "rot-thirteen": "^1.0.0"
   },
-  "repository":"https://github.com/vivsie/pesterchum/"
+  "repository": "https://github.com/vivsie/pesterchum/"
 }
